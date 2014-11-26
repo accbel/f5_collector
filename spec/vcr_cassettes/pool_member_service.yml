@@ -1,0 +1,96 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://SPSMON01:w1nrq6uk8D6M8TP2@172.16.128.101/iControl/iControlPortal.cgi
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pool="urn:iControl:LocalLB/PoolMember"
+        xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ins0="urn:iControl"><soapenv:Body><pool:get_statistics><pool_names><item>pool_portalrh_promais_80</item></pool_names><members><items><item><address>172.23.27.225</address><port>80</port></item></items></members></pool:get_statistics></soapenv:Body></soapenv:Envelope>
+    headers:
+      Soapaction:
+      - '"urn:iControl:LocalLB/PoolMember"'
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Content-Length:
+      - '531'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 25 Nov 2014 22:27:41 GMT
+      Server:
+      - Apache
+      Set-Cookie:
+      - BIGIPAuthCookie=A40C4FF5F7CA664CDD1691F811DC07BD36C2DFDB; path=/; Secure;
+      - BIGIPAuthUsernameCookie=SPSMON01; path=/; Secure;
+      Soapserver:
+      - EasySoap++/0.6
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - text/xml; charset="UTF-8"
+    body:
+      encoding: UTF-8
+      string: "<E:Envelope\r\n\txmlns:E=\"http://schemas.xmlsoap.org/soap/envelope/\"\r\n\txmlns:A=\"http://schemas.xmlsoap.org/soap/encoding/\"\r\n\txmlns:s=\"http://www.w3.org/2001/XMLSchema-instance\"\r\n\txmlns:y=\"http://www.w3.org/2001/XMLSchema\"\r\n\txmlns:iControl=\"urn:iControl\"\r\n\tE:encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\">\r\n<E:Body>\r\n<m:get_statisticsResponse\r\n\txmlns:m=\"urn:iControl:LocalLB/PoolMember\">\r\n<return\r\n\ts:type=\"A:Array\"\r\n\tA:arrayType=\"iControl:LocalLB.PoolMember.MemberStatistics[1]\">\r\n<item>\r\n<statistics\r\n\ts:type=\"A:Array\"\r\n\tA:arrayType=\"iControl:LocalLB.PoolMember.MemberStatisticEntry[1]\">\r\n<item>\r\n<member\r\n\ts:type=\"iControl:Common.IPPortDefinition\">\r\n<address\r\n\ts:type=\"y:string\">172.23.27.225</address>\r\n<port\r\n\ts:type=\"y:long\">80</port>\r\n</member>\r\n<statistics\r\n\ts:type=\"A:Array\"\r\n\tA:arrayType=\"iControl:Common.Statistic[17]\">\r\n<item>\r\n<type\r\n\ts:type=\"iControl:Common.StatisticType\">STATISTIC_SERVER_SIDE_BYTES_IN</type>\r\n<value\r\n\ts:type=\"iControl:Common.ULong64\">\r\n<high\r\n\ts:type=\"y:long\">0</high>\r\n<low\r\n\ts:type=\"y:long\">0</low>\r\n</value>\r\n<time_stamp\r\n\ts:type=\"y:long\">0</time_stamp>\r\n</item>\r\n<item>\r\n<type\r\n\ts:type=\"iControl:Common.StatisticType\">STATISTIC_SERVER_SIDE_BYTES_OUT</type>\r\n<value\r\n\ts:type=\"iControl:Common.ULong64\">\r\n<high\r\n\ts:type=\"y:long\">0</high>\r\n<low\r\n\ts:type=\"y:long\">0</low>\r\n</value>\r\n<time_stamp\r\n\ts:type=\"y:long\">0</time_stamp>\r\n</item>\r\n<item>\r\n<type\r\n\ts:type=\"iControl:Common.StatisticType\">STATISTIC_SERVER_SIDE_PACKETS_IN</type>\r\n<value\r\n\ts:type=\"iControl:Common.ULong64\">\r\n<high\r\n\ts:type=\"y:long\">0</high>\r\n<low\r\n\ts:type=\"y:long\">0</low>\r\n</value>\r\n<time_stamp\r\n\ts:type=\"y:long\">0</time_stamp>\r\n</item>\r\n<item>\r\n<type\r\n\ts:type=\"iControl:Common.StatisticType\">STATISTIC_SERVER_SIDE_PACKETS_OUT</type>\r\n<value\r\n\ts:type=\"iControl:Common.ULong64\">\r\n<high\r\n\ts:type=\"y:long\">0</high>\r\n<low\r\n\ts:type=\"y:long\">0</low>\r\n</value>\r\n<time_stamp\r\n\ts:type=\"y:long\">0</time_stamp>\r\n</item>\r\n<item>\r\n<type\r\n\ts:type=\"iControl:Common.StatisticType\">STATISTIC_SERVER_SIDE_CURRENT_CONNECTIONS</type>\r\n<value\r\n\ts:type=\"iControl:Common.ULong64\">\r\n<high\r\n\ts:type=\"y:long\">0</high>\r\n<low\r\n\ts:type=\"y:long\">0</low>\r\n</value>\r\n<time_stamp\r\n\ts:type=\"y:long\">0</time_stamp>\r\n</item>\r\n<item>\r\n<type\r\n\ts:type=\"iControl:Common.StatisticType\">STATISTIC_SERVER_SIDE_MAXIMUM_CONNECTIONS</type>\r\n<value\r\n\ts:type=\"iControl:Common.ULong64\">\r\n<high\r\n\ts:type=\"y:long\">0</high>\r\n<low\r\n\ts:type=\"y:long\">0</low>\r\n</value>\r\n<time_stamp\r\n\ts:type=\"y:long\">0</time_stamp>\r\n</item>\r\n<item>\r\n<type\r\n\ts:type=\"iControl:Common.StatisticType\">STATISTIC_SERVER_SIDE_TOTAL_CONNECTIONS</type>\r\n<value\r\n\ts:type=\"iControl:Common.ULong64\">\r\n<high\r\n\ts:type=\"y:long\">0</high>\r\n<low\r\n\ts:type=\"y:long\">0</low>\r\n</value>\r\n<time_stamp\r\n\ts:type=\"y:long\">0</time_stamp>\r\n</item>\r\n<item>\r\n<type\r\n\ts:type=\"iControl:Common.StatisticType\">STATISTIC_PVA_SERVER_SIDE_BYTES_IN</type>\r\n<value\r\n\ts:type=\"iControl:Common.ULong64\">\r\n<high\r\n\ts:type=\"y:long\">0</high>\r\n<low\r\n\ts:type=\"y:long\">0</low>\r\n</value>\r\n<time_stamp\r\n\ts:type=\"y:long\">0</time_stamp>\r\n</item>\r\n<item>\r\n<type\r\n\ts:type=\"iControl:Common.StatisticType\">STATISTIC_PVA_SERVER_SIDE_BYTES_OUT</type>\r\n<value\r\n\ts:type=\"iControl:Common.ULong64\">\r\n<high\r\n\ts:type=\"y:long\">0</high>\r\n<low\r\n\ts:type=\"y:long\">0</low>\r\n</value>\r\n<time_stamp\r\n\ts:type=\"y:long\">0</time_stamp>\r\n</item>\r\n<item>\r\n<type\r\n\ts:type=\"iControl:Common.StatisticType\">STATISTIC_PVA_SERVER_SIDE_PACKETS_IN</type>\r\n<value\r\n\ts:type=\"iControl:Common.ULong64\">\r\n<high\r\n\ts:type=\"y:long\">0</high>\r\n<low\r\n\ts:type=\"y:long\">0</low>\r\n</value>\r\n<time_stamp\r\n\ts:type=\"y:long\">0</time_stamp>\r\n</item>\r\n<item>\r\n<type\r\n\ts:type=\"iControl:Common.StatisticType\">STATISTIC_PVA_SERVER_SIDE_PACKETS_OUT</type>\r\n<value\r\n\ts:type=\"iControl:Common.ULong64\">\r\n<high\r\n\ts:type=\"y:long\">0</high>\r\n<low\r\n\ts:type=\"y:long\">0</low>\r\n</value>\r\n<time_stamp\r\n\ts:type=\"y:long\">0</time_stamp>\r\n</item>\r\n<item>\r\n<type\r\n\ts:type=\"iControl:Common.StatisticType\">STATISTIC_PVA_SERVER_SIDE_CURRENT_CONNECTIONS</type>\r\n<value\r\n\ts:type=\"iControl:Common.ULong64\">\r\n<high\r\n\ts:type=\"y:long\">0</high>\r\n<low\r\n\ts:type=\"y:long\">0</low>\r\n</value>\r\n<time_stamp\r\n\ts:type=\"y:long\">0</time_stamp>\r\n</item>\r\n<item>\r\n<type\r\n\ts:type=\"iControl:Common.StatisticType\">STATISTIC_PVA_SERVER_SIDE_MAXIMUM_CONNECTIONS</type>\r\n<value\r\n\ts:type=\"iControl:Common.ULong64\">\r\n<high\r\n\ts:type=\"y:long\">0</high>\r\n<low\r\n\ts:type=\"y:long\">0</low>\r\n</value>\r\n<time_stamp\r\n\ts:type=\"y:long\">0</time_stamp>\r\n</item>\r\n<item>\r\n<type\r\n\ts:type=\"iControl:Common.StatisticType\">STATISTIC_PVA_SERVER_SIDE_TOTAL_CONNECTIONS</type>\r\n<value\r\n\ts:type=\"iControl:Common.ULong64\">\r\n<high\r\n\ts:type=\"y:long\">0</high>\r\n<low\r\n\ts:type=\"y:long\">0</low>\r\n</value>\r\n<time_stamp\r\n\ts:type=\"y:long\">0</time_stamp>\r\n</item>\r\n<item>\r\n<type\r\n\ts:type=\"iControl:Common.StatisticType\">STATISTIC_TOTAL_REQUESTS</type>\r\n<value\r\n\ts:type=\"iControl:Common.ULong64\">\r\n<high\r\n\ts:type=\"y:long\">0</high>\r\n<low\r\n\ts:type=\"y:long\">0</low>\r\n</value>\r\n<time_stamp\r\n\ts:type=\"y:long\">0</time_stamp>\r\n</item>\r\n<item>\r\n<type\r\n\ts:type=\"iControl:Common.StatisticType\">STATISTIC_TOTAL_PVA_ASSISTED_CONNECTIONS</type>\r\n<value\r\n\ts:type=\"iControl:Common.ULong64\">\r\n<high\r\n\ts:type=\"y:long\">0</high>\r\n<low\r\n\ts:type=\"y:long\">0</low>\r\n</value>\r\n<time_stamp\r\n\ts:type=\"y:long\">0</time_stamp>\r\n</item>\r\n<item>\r\n<type\r\n\ts:type=\"iControl:Common.StatisticType\">STATISTIC_CURRENT_PVA_ASSISTED_CONNECTIONS</type>\r\n<value\r\n\ts:type=\"iControl:Common.ULong64\">\r\n<high\r\n\ts:type=\"y:long\">0</high>\r\n<low\r\n\ts:type=\"y:long\">0</low>\r\n</value>\r\n<time_stamp\r\n\ts:type=\"y:long\">0</time_stamp>\r\n</item>\r\n</statistics>\r\n</item>\r\n</statistics>\r\n<time_stamp\r\n\ts:type=\"iControl:Common.TimeStamp\">\r\n<year\r\n\ts:type=\"y:long\">2014</year>\r\n<month\r\n\ts:type=\"y:long\">11</month>\r\n<day\r\n\ts:type=\"y:long\">25</day>\r\n<hour\r\n\ts:type=\"y:long\">22</hour>\r\n<minute\r\n\ts:type=\"y:long\">27</minute>\r\n<second\r\n\ts:type=\"y:long\">41</second>\r\n</time_stamp>\r\n</item>\r\n</return>\r\n</m:get_statisticsResponse>\r\n</E:Body>\r\n</E:Envelope>\r\n"
+    http_version: 
+  recorded_at: Tue, 25 Nov 2014 22:33:11 GMT
+- request:
+    method: post
+    uri: https://SPSMON01:w1nrq6uk8D6M8TP2@172.16.128.101/iControl/iControlPortal.cgi
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pool="urn:iControl:LocalLB/PoolMember"
+        xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ins0="urn:iControl"><soapenv:Body><pool:get_statistics><pool_names><item>pool_portalrh_promais_80</item></pool_names><members><items><item><address>172.23.27.230</address><port>80</port></item></items></members></pool:get_statistics></soapenv:Body></soapenv:Envelope>
+    headers:
+      Soapaction:
+      - '"urn:iControl:LocalLB/PoolMember"'
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Content-Length:
+      - '531'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 500
+      message: Internal Server Error
+    headers:
+      Date:
+      - Tue, 25 Nov 2014 22:27:42 GMT
+      Server:
+      - Apache
+      Set-Cookie:
+      - BIGIPAuthCookie=A40C4FF5F7CA664CDD1691F811DC07BD36C2DFDB; path=/; Secure;
+      - BIGIPAuthUsernameCookie=SPSMON01; path=/; Secure;
+      Soapserver:
+      - EasySoap++/0.6
+      Connection:
+      - close
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - text/xml; charset="UTF-8"
+    body:
+      encoding: UTF-8
+      string: "<SOAP-ENV:Envelope\r\n\txmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\"\r\n\txmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\r\n\txmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n<SOAP-ENV:Body>\r\n<SOAP-ENV:Fault>\r\n<faultcode\r\n\txsi:type=\"xsd:string\">SOAP-ENV:Server</faultcode>\r\n<faultstring\r\n\txsi:type=\"xsd:string\">Exception
+        caught in LocalLB::urn:iControl:LocalLB/PoolMember::get_statistics()\nException:
+        Common::OperationFailed\n\tprimary_error_code   : 16908336 (0x01020030)\n\tsecondary_error_code
+        : 0\n\terror_string         : </faultstring>\r\n</SOAP-ENV:Fault>\r\n</SOAP-ENV:Body>\r\n</SOAP-ENV:Envelope>\r\n"
+    http_version: 
+  recorded_at: Tue, 25 Nov 2014 22:33:12 GMT
+recorded_with: VCR 2.9.3

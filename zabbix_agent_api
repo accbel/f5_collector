@@ -1,0 +1,16 @@
+Methods:
+  * discovery(endpoint_ips)
+  discovery_response = {
+    data : [
+      {
+        "{#ENDPOINT}" : "ENDPOINT_IP",
+        "{#POOL_NAME}" : "POOL_NAME",
+        "{#MEMBER_IP}" : "MEMBER_IP",
+        "{#MEMBER_PORT}" : "MEMBER_PORT"
+      },
+      ...
+    ]
+  }
+
+  * statistics(endpoint_ip, pool_name, member_ip, member_port)
+  statistics_response = "CURRENT_CONNECTIONS_LOW_VALUE"

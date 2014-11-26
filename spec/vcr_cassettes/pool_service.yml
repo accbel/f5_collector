@@ -1,0 +1,91 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://SPSMON01:w1nrq6uk8D6M8TP2@172.16.128.101/iControl/iControlPortal.cgi
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pool="urn:iControl:LocalLB/Pool"
+        xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ins0="urn:iControl"><soapenv:Body><pool:get_list></pool:get_list></soapenv:Body></soapenv:Envelope>
+    headers:
+      Soapaction:
+      - '"urn:iControl:LocalLB/Pool"'
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Content-Length:
+      - '357'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 25 Nov 2014 22:25:29 GMT
+      Server:
+      - Apache
+      Set-Cookie:
+      - BIGIPAuthCookie=A40C4FF5F7CA664CDD1691F811DC07BD36C2DFDB; path=/; Secure;
+      - BIGIPAuthUsernameCookie=SPSMON01; path=/; Secure;
+      Soapserver:
+      - EasySoap++/0.6
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - text/xml; charset="UTF-8"
+    body:
+      encoding: UTF-8
+      string: "<E:Envelope\r\n\txmlns:E=\"http://schemas.xmlsoap.org/soap/envelope/\"\r\n\txmlns:A=\"http://schemas.xmlsoap.org/soap/encoding/\"\r\n\txmlns:s=\"http://www.w3.org/2001/XMLSchema-instance\"\r\n\txmlns:y=\"http://www.w3.org/2001/XMLSchema\"\r\n\txmlns:iControl=\"urn:iControl\"\r\n\tE:encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\">\r\n<E:Body>\r\n<m:get_listResponse\r\n\txmlns:m=\"urn:iControl:LocalLB/Pool\">\r\n<return\r\n\ts:type=\"A:Array\"\r\n\tA:arrayType=\"y:string[2]\">\r\n<item>pool_portalrh_promais_443</item>\r\n<item>pool_portalrh_promais_80</item>\r\n</return>\r\n</m:get_listResponse>\r\n</E:Body>\r\n</E:Envelope>\r\n"
+    http_version: 
+  recorded_at: Tue, 25 Nov 2014 22:30:59 GMT
+- request:
+    method: post
+    uri: https://SPSMON01:w1nrq6uk8D6M8TP2@172.16.128.101/iControl/iControlPortal.cgi
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pool="urn:iControl:LocalLB/Pool"
+        xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ins0="urn:iControl"><soapenv:Body><pool:get_member><pool_names><item>pool_portalrh_promais_443</item><item>pool_portalrh_promais_80</item></pool_names></pool:get_member></soapenv:Body></soapenv:Envelope>
+    headers:
+      Soapaction:
+      - '"urn:iControl:LocalLB/Pool"'
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Content-Length:
+      - '461'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 25 Nov 2014 22:25:29 GMT
+      Server:
+      - Apache
+      Set-Cookie:
+      - BIGIPAuthCookie=A40C4FF5F7CA664CDD1691F811DC07BD36C2DFDB; path=/; Secure;
+      - BIGIPAuthUsernameCookie=SPSMON01; path=/; Secure;
+      Soapserver:
+      - EasySoap++/0.6
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - text/xml; charset="UTF-8"
+    body:
+      encoding: UTF-8
+      string: "<E:Envelope\r\n\txmlns:E=\"http://schemas.xmlsoap.org/soap/envelope/\"\r\n\txmlns:A=\"http://schemas.xmlsoap.org/soap/encoding/\"\r\n\txmlns:s=\"http://www.w3.org/2001/XMLSchema-instance\"\r\n\txmlns:y=\"http://www.w3.org/2001/XMLSchema\"\r\n\txmlns:iControl=\"urn:iControl\"\r\n\tE:encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\">\r\n<E:Body>\r\n<m:get_memberResponse\r\n\txmlns:m=\"urn:iControl:LocalLB/Pool\">\r\n<return\r\n\ts:type=\"A:Array\"\r\n\tA:arrayType=\"iControl:Common.IPPortDefinition[][2]\">\r\n<item\r\n\tA:arrayType=\"iControl:Common.IPPortDefinition[4]\">\r\n<item>\r\n<address\r\n\ts:type=\"y:string\">172.23.27.225</address>\r\n<port\r\n\ts:type=\"y:long\">443</port>\r\n</item>\r\n<item>\r\n<address\r\n\ts:type=\"y:string\">172.23.27.227</address>\r\n<port\r\n\ts:type=\"y:long\">443</port>\r\n</item>\r\n<item>\r\n<address\r\n\ts:type=\"y:string\">172.23.27.251</address>\r\n<port\r\n\ts:type=\"y:long\">443</port>\r\n</item>\r\n<item>\r\n<address\r\n\ts:type=\"y:string\">172.23.27.252</address>\r\n<port\r\n\ts:type=\"y:long\">443</port>\r\n</item>\r\n</item>\r\n<item\r\n\tA:arrayType=\"iControl:Common.IPPortDefinition[4]\">\r\n<item>\r\n<address\r\n\ts:type=\"y:string\">172.23.27.225</address>\r\n<port\r\n\ts:type=\"y:long\">80</port>\r\n</item>\r\n<item>\r\n<address\r\n\ts:type=\"y:string\">172.23.27.227</address>\r\n<port\r\n\ts:type=\"y:long\">80</port>\r\n</item>\r\n<item>\r\n<address\r\n\ts:type=\"y:string\">172.23.27.251</address>\r\n<port\r\n\ts:type=\"y:long\">80</port>\r\n</item>\r\n<item>\r\n<address\r\n\ts:type=\"y:string\">172.23.27.252</address>\r\n<port\r\n\ts:type=\"y:long\">80</port>\r\n</item>\r\n</item>\r\n</return>\r\n</m:get_memberResponse>\r\n</E:Body>\r\n</E:Envelope>\r\n"
+    http_version: 
+  recorded_at: Tue, 25 Nov 2014 22:30:59 GMT
+recorded_with: VCR 2.9.3

@@ -1,0 +1,15 @@
+default: &default
+  :user: 'SPSMON01'
+  :password: 'w1nrq6uk8D6M8TP2'
+:pool_service:
+  <<: *default
+  :wsdl: 'LocalLB.Pool.wsdl'
+  :endpoint: 'https://%s/iControl/iControlPortal.cgi'
+  :namespace: 'urn:iControl:LocalLB/Pool'
+  :namespace_identifier: !ruby/symbol pool
+:pool_member_service:
+  <<: *default
+  :wsdl: 'LocalLB.PoolMember.wsdl'
+  :endpoint: 'https://%s/iControl/iControlPortal.cgi'
+  :namespace: 'urn:iControl:LocalLB/PoolMember'
+  :namespace_identifier: !ruby/symbol pool

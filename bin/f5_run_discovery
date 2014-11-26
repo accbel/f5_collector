@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+require 'f5_collector'
+
+ENDPOINT_IPS = ARGV[0].split(',')
+
+ZabbixAgentController.new.discover(ENDPOINT_IPS)
