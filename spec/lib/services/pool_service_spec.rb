@@ -16,10 +16,7 @@ describe "PoolService" do
   let(:members) {
     [
       [pools.first,
-        [{:address=>"172.23.27.225", :port=>"443"},
-         {:address=>"172.23.27.227", :port=>"443"},
-         {:address=>"172.23.27.251", :port=>"443"},
-         {:address=>"172.23.27.252", :port=>"443"}] ],
+        [{:address=>"172.23.27.225", :port=>"443"}] ],
       [pools.last,
         [{:address=>"172.23.27.225", :port=>"80"},
          {:address=>"172.23.27.227", :port=>"80"},
