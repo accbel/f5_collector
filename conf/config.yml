@@ -1,6 +1,8 @@
 default: &default
   :user: 'SPSMON01'
   :password: 'w1nrq6uk8D6M8TP2'
+  :open_timeout: 10
+  :read_timeout: 10
 :pool_service:
   <<: *default
   :wsdl: 'LocalLB.Pool.wsdl'

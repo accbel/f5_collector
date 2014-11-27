@@ -8,6 +8,8 @@ class BaseService
       s.namespace config[:namespace]
       s.env_namespace :soapenv
       s.namespace_identifier config[:namespace_identifier]
+      s.open_timeout config[:open_timeout]
+      s.read_timeout config[:read_timeout]
     end
   end
 
