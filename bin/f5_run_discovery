@@ -2,6 +2,12 @@
 
 require 'f5_collector'
 
-ENDPOINT_IPS = ARGV[0].split(',')
-
-ZabbixAgentController.new.discover(ENDPOINT_IPS)
+begin
+  ENDPOINT_IPS = ARGV[0].split(',')
+  puts ZabbixAgentController.new.discover(ENDPOINT_IPS)
+rescue => e
+  F5Collector.logger.error("Command execution failed:") {
+    [e.message,e.backtrace].join("\n")
+  }
+  exit 1
+end
