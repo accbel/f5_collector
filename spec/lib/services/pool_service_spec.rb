@@ -31,10 +31,17 @@ describe "PoolService" do
     end
   end
 
-  it "should get all members per pool" do
-    VCR.use_cassette('pool_service', :match_requests_on => [:body]) do
-      expect(subject.discover_pool_members pools).to eq(members)
+  context "when discovering pool's members" do
+    it "should return an empty array when there is no pools to inspect" do
+      expect(subject.discover_pool_members nil).to eq([])
+      expect(subject.discover_pool_members []).to eq([])
     end
-  end  
+
+    it "should get all members per pool" do
+      VCR.use_cassette('pool_service', :match_requests_on => [:body]) do
+        expect(subject.discover_pool_members pools).to eq(members)
+      end
+    end
+  end
 
 end

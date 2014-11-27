@@ -10,12 +10,16 @@ class ZabbixAgentController
       begin
         pools = service.discover_pools
         service.discover_pool_members(pools).each do |pool|
-          pool.last.each { |member| 
-            response[:data].push fill_pool_member_template(ip, pool.first, member[:address], member[:port])
-          }
+          begin
+            pool.last.each { |member| 
+              response[:data].push fill_pool_member_template(ip, pool.first, member[:address], member[:port])
+            }
+          rescue => e
+            log "Endpoint: #{ip} - Pool: #{pool.first}", exception
+          end
         end
       rescue => exception
-        log ip, exception
+        log "Endpoint: #{ip}", exception
       end
     end
 
@@ -31,7 +35,7 @@ class ZabbixAgentController
     service = PoolMemberService.new F5Collector::CONF_PATH, endpoint_ip, F5Collector::CONFIG[:pool_member_service]
     service.get_statistics [pool_name], member_ip, member_port, "STATISTIC_SERVER_SIDE_CURRENT_CONNECTIONS", :low
   rescue Savon::Error => exception
-    log endpoint_ip, exception
+    log "Endpoint: #{endpoint_ip}", exception
     "ZBX_NOTSUPPORTED"
   end
 
@@ -43,8 +47,8 @@ class ZabbixAgentController
      "{#MEMBER_PORT}" => "#{member_port}"}
   end
 
-  def log endpoint_ip, exception
-    F5Collector.logger.error("Endpoint: #{endpoint_ip}") {
+  def log message, exception
+    F5Collector.logger.error(message) {
       [exception.message,exception.backtrace].join("\n")
     }
   end

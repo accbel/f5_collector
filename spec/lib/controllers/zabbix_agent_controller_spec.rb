@@ -51,15 +51,21 @@ describe ZabbixAgentController do
 
     context "when something gets wrong" do
 
+      let(:pool_service_mock) { instance_double("PoolService") }
+
       before {
-        pool_service_mock = instance_double("PoolService")
-        expect(pool_service_mock).to receive(:discover_pools).and_raise(Savon::Error)
         expect(PoolService).to receive(:new).and_return(pool_service_mock)
       }
 
-      it "should log an error" do
-        expect_any_instance_of(Logger).to receive(:error).with("Endpoint: #{endpoint_ips.first}").and_yield
-        subject.discover endpoint_ips
+      context "at discovery" do
+        before {
+          expect(pool_service_mock).to receive(:discover_pools).and_raise(Savon::Error)
+        }
+
+        it "should log an error" do
+          expect_any_instance_of(Logger).to receive(:error).with("Endpoint: #{endpoint_ips.first}").and_yield
+          subject.discover endpoint_ips
+        end
       end
     end
 
