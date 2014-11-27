@@ -2,7 +2,11 @@ require 'yaml'
 require 'savon'
 require 'json'
 
-Dir[__dir__ + '/**/*.rb'].each { |f| require f }
+require 'f5_collector/version'
+require 'services/base_service'
+require 'services/pool_service'
+require 'services/pool_member_service'
+require 'controllers/zabbix_agent_controller'
 
 module F5Collector
 
