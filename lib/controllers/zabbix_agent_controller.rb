@@ -45,7 +45,7 @@ class ZabbixAgentController
 
   def log endpoint_ip, exception
     F5Collector.logger.error("Endpoint: #{endpoint_ip}") {
-      exception.backtrace.join("\n")
+      [exception.message,exception.backtrace].join("\n")
     }
   end
 end
